@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AllDemoApp</string>
+    <string name="title_activity_payment_gateway">PaymentGatewayActivity</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_app_manager">App Manager Activity</string>
+    <string name="title_activity_fire_base">FireBaseActivity</string>
+</resources>
