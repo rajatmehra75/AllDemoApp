@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 //                Log.d(TAG, "current time formatted :"+AppUtils.convertLongDateToStringDate(System.currentTimeMillis(),"dd MMM, yyyy 'at' hh:mm aa"));
 
                 AppUtils.writeLogFile(AppUtils.convertLongDateToStringDate(System.currentTimeMillis(), "yyyy-MM-dd-hh-mm-ss") + " new logs added",
-                        "temp", false);
+                        "tempfile", false);
             }
         });
 
