@@ -1,5 +1,6 @@
 package com.rajat.alldemoapp;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,9 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.rajat.alldemoapp.activity.MyLocationActivity;
 import com.rajat.alldemoapp.bean.History;
 import com.rajat.alldemoapp.retrofit.RequestHandler;
-import com.rajat.alldemoapp.utils.AppUtils;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -45,8 +46,10 @@ public class MainActivity extends AppCompatActivity {
 //                Log.d(TAG, "current time :"+AppUtils.convertLongDateToStringDate(System.currentTimeMillis(),"yyyy-MM-dd-hh-mm-ss"));
 //                Log.d(TAG, "current time formatted :"+AppUtils.convertLongDateToStringDate(System.currentTimeMillis(),"dd MMM, yyyy 'at' hh:mm aa"));
 
-                AppUtils.writeLogFile(AppUtils.convertLongDateToStringDate(System.currentTimeMillis(), "yyyy-MM-dd-hh-mm-ss") + " new logs added",
-                        "tempfile", false);
+//                AppUtils.writeLogFile(AppUtils.convertLongDateToStringDate(System.currentTimeMillis(), "yyyy-MM-dd-hh-mm-ss") + " new logs added",
+//                        "tempfile", false);
+                Intent intent = new Intent(MainActivity.this, MyLocationActivity.class);
+                startActivity(intent);
             }
         });
 
