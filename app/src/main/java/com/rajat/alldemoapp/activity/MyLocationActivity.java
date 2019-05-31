@@ -24,8 +24,10 @@ import com.rajat.alldemoapp.R;
 public class MyLocationActivity extends AppCompatActivity {
     private static final String TAG = MyLocationActivity.class.getSimpleName();
     private static final String REQUESTING_LOCATION_UPDATES_KEY = "update_key";
+    public static final int MINUTE_IN_MILLISECONDS = 60 * 1000;
+    public static final int SECOND_IN_MILLISECONDS = 1000;
     private FusedLocationProviderClient fusedLocationClient;
-    private boolean requestingLocationUpdates;
+    private boolean requestingLocationUpdates = true;
     private LocationCallback locationCallback;
     private LocationRequest locationRequest;
     private TextView tvLocation;
@@ -74,8 +76,6 @@ public class MyLocationActivity extends AppCompatActivity {
                     updateUI(location);
                 }
             }
-
-            ;
         };
 
         locationRequest = new LocationRequest();
@@ -83,8 +83,9 @@ public class MyLocationActivity extends AppCompatActivity {
 //        locationRequest.setInterval(10 * 60 * 1000);
 //        locationRequest.setMaxWaitTime(60 * 60 * 1000);
 
-        locationRequest.setInterval(60 * 1000);
-        locationRequest.setFastestInterval(10 * 1000);
+        locationRequest.setInterval(10 * SECOND_IN_MILLISECONDS);
+        locationRequest.setMaxWaitTime(MINUTE_IN_MILLISECONDS);
+        locationRequest.setFastestInterval(5 * SECOND_IN_MILLISECONDS);
 
         updateValuesFromBundle(savedInstanceState);
 
@@ -158,15 +159,22 @@ public class MyLocationActivity extends AppCompatActivity {
     }
 
     private void updateUI(Location location) {
-        tvLocation.setText("Location :/n" + getLocationStr(location));
+        tvLocation.setText("Location :\n" + getLocationStr(location));
     }
 
     private String getLocationStr(Location location) {
         String locationStr = "";
         if (location != null) {
-            locationStr = locationStr + " " + location.getLatitude();
-            locationStr = locationStr + " " + location.getLongitude();
-            locationStr = locationStr + " " + location.getProvider();
+//            locationStr = locationStr + " " + location.getLatitude();
+//            locationStr = locationStr + " " + location.getLongitude();
+//            locationStr = locationStr + " " + location.getProvider();
+
+//            long bootTime = java.lang.System.currentTimeMillis() - android.os.SystemClock.elapsedRealtime();
+//            locationStr = locationStr + " curr " + DateFormat.getDateTimeInstance().format(new Date(java.lang.System.currentTimeMillis()));
+//            locationStr = locationStr + " elapsed " + DateFormat.getDateTimeInstance().format(new Date(android.os.SystemClock.elapsedRealtime()));
+//            locationStr = locationStr + " bootTime " + DateFormat.getDateTimeInstance().format(new Date(bootTime));
+//            locationStr = locationStr + " location.getTime() " + DateFormat.getDateTimeInstance().format(new Date(location.getTime()));
+
             locationStr = locationStr + " " + location.toString();
         }
         Log.d(TAG, "getLocationStr : " + locationStr);
