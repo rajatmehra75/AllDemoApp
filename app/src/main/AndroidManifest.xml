@@ -62,7 +62,13 @@
         <activity
             android:name=".activity.MyLocationActivity"
             android:label="@string/title_activity_my_location"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.M1Activity"
+            android:label="M1"/>
+        <activity android:name=".activity.M2Activity"
+            android:label="M2"/>
+        <activity android:name=".activity.M3Activity"
+            android:label="M3"></activity>
     </application>
 
 </manifest>

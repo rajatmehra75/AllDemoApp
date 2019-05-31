@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.rajat.alldemoapp.activity.MyLocationActivity;
+import com.rajat.alldemoapp.activity.M1Activity;
 import com.rajat.alldemoapp.bean.History;
 import com.rajat.alldemoapp.retrofit.RequestHandler;
 
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
 //                AppUtils.writeLogFile(AppUtils.convertLongDateToStringDate(System.currentTimeMillis(), "yyyy-MM-dd-hh-mm-ss") + " new logs added",
 //                        "tempfile", false);
-                Intent intent = new Intent(MainActivity.this, MyLocationActivity.class);
+                Intent intent = new Intent(MainActivity.this, M1Activity.class);
                 startActivity(intent);
             }
         });
